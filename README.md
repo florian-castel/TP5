@@ -19,43 +19,42 @@ Avant de démarrer le TP, vérifiez que vous n'avez pas atteint votre quota d'es
 
 
 ### Consignes
-- Vous respecterez toutes les [consignes](https://github.com/IUTInfoMontp-M2103/TP4#consignes) indiquées dans le TP pécédént
+- Vous respecterez toutes les [consignes](https://github.com/IUTInfoMontp-M2103/TP4#consignes) indiquées dans le TP précédent
 - Dans ce TP, un principe important que vous devriez essayer de respecter dans votre code est le principe
 [DRY](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas)
 
 
 
 ## TP5
-#### _Thème : Héritage : réutiliser, mais ne pas en abuser_
+#### _Thème : Héritage - réutiliser, mais sans en abuser_
 
 Cliquez sur le lien ci-dessous pour faire votre fork privé du TP :
 
 LIEN GITHUB CLASSROOM À AJOUTER ICI
 
-Date limite de rendu de votre code sur le dépôt : **Dimanche 24 février à 23h00**
+Date limite de rendu de votre code sur le dépôt GitHub : **Dimanche 24 février à 23h00**
 
 Vous êtes chargés de proposer une application de gestion des employés dans une entreprise.
 L’objectif est de développer votre application de manière incrémentale, en ajoutant les fonctionnalités demandées au fur
 et à mesure __sans modifier les fonctionnalités écrites précédemment__. Ce que l'on considère ici comme _modification_
-c'est effacer et/ou réécrire du code précédemment écrit. _Ajouter_ du code sans modifier le code pécédent est donc
+c'est effacer et/ou réécrire du code précédemment écrit. _Ajouter_ du code sans modifier le code précédent est donc
 une opération valide. On dira ici, que pour chaque modification de votre programme (effacement et réécriture) la
 [dette](https://fr.wikipedia.org/wiki/Dette_technique) de votre logiciel augmente.
-Afin de respecter les divers principes en programmation orientée objets (encapsulation, DRY, YAGNI etc.), dans ce TP,
-vous essayerez d'éviter au maximum de _modifier_ le programme écrit précédemment pour ne pas trop augmenter cette dette...
-
+Afin de respecter les divers principes en programmation orientée objets (encapsulation, DRY, YAGNI etc.), vous essayerez
+d'éviter au maximum de _modifier_ le programme écrit précédemment pour ne pas trop augmenter cette dette...
 
 # Exercice 1
 
 1. Dans un premier temps vous devez modéliser les employés qui sont représentés par les données suivantes : numéro de
-sécurité sociale, nom, prénom, échelon (entier naturel), date d’embauche. Implémentez la classe `Employe`
-correspondante et ajoutez-y un constructeur approprié. Le constructeur ayant beaucoup de paramètres, il vous est également
- demandé de proposer un builder pour une construction plus souple (cf.
- [Exercice 3 du TP3](https://github.com/IUTInfoMontp-M2103/tp3#exercice-3-bonus). Vous pouvez générer le builder
- de manière automatique avec l'outil de refactoring d'IntelliJ IDEA :
+   sécurité sociale, nom, prénom, échelon (entier naturel). Implémentez la classe `Employe`
+   correspondante et ajoutez-y un constructeur approprié. Le constructeur ayant beaucoup de paramètres, il vous est également
+    demandé de proposer un builder pour une construction plus souple (cf.
+    [question 5, Exercice 3 du TP3](https://github.com/IUTInfoMontp-M2103/tp3#exercice-3-bonus)).
+    Vous pouvez générer le builder de manière automatique avec l'outil de refactoring d'IntelliJ IDEA :
    * clic droit sur le nom du constructeur de votre classe &rightarrow; _Refactor_ &rightarrow;
    _Replace Constructor with Builder_ :
    ![](ressources/GenerationBuilder.png)
-   * Dans la fênetre qui s'affiche vous cocherez tous les paramètres comme indiqué dans le dessin ci-dessous et cliquerez
+   * Dans la fenêtre qui s'affiche vous cocherez tous les paramètres comme indiqué dans le dessin ci-dessous et cliquerez
     sur le bouton _Refactor_ :
    
    ![](ressources/ParametresBuilder.png)
@@ -82,7 +81,8 @@ employés (avec le builder) et afficherez les informations les concernant.
 d'employés. Il faut spécifier les cas des _Commerciaux_, _Fabricants_, et les autres employés qu’on appellera
 _Techniciens_.
    * Un `Commercial` a comme attributs `chiffreAffaires` et `tauxCommission`  (tous les deux de type `double`).
-   * Un `Fabricant` a comme attributs `nbUnitesProduites` et `tauxCommissionUnite` (type `int`et `double` respectivement)
+   * Un `Fabricant` a comme attributs `nbUnitesProduites` et `tauxCommissionUnite` (type `int`et `double` respectivement).
+   * Un `Technicien` n'a pour l'instant aucun nouveau attribut, ni aucune nouvelle méthode.
  Implémentez les classes correspondantes en les faisant hériter de la classe `Employe`.
 
 2. Un commercial peut négocier des transactions (avec la méthode `negocierTransaction()`), un fabricant fabrique des
@@ -103,7 +103,8 @@ appelant sa fonction spécifique.
     * Le salaire brut d’un fabricant est calculé de la même manière que le salaire brut d’un employé en ajoutant une
     rémunération supplémentaire en fonction du rendement. Dans notre exemple, le résultat de ce calcul devrait
     correspondre à `base ∗ nbHeures + nbUnitesProduites ∗ tauxCommissionUnite`.
-    * La modalité de calcul du salaire net demeure inchangé pour tous les employés (à savoir 80% du salaire brut).
+    * **Important :** La modalité de calcul du salaire net demeure inchangée pour tous les employés (à savoir 80% du
+    salaire brut).
     
    _Redéfinissez_ la méthode calcul de salaire brut dans chaque classe d'employé spécifique pour prendre en compte
    ces nouvelles formules. Vous ajouterez le code qui vous paraît nécessaire à la classe `Employe` mais sans modifier
