@@ -66,9 +66,8 @@ d'éviter au maximum de _modifier_ le programme écrit précédemment pour ne pa
 3. Redéfinissez la méthode `toString()` dans la classe `Employe` pour afficher les informations concernant un employé
 (y compris ses salaires brut et net).
  
-4. Si votre client vous demande de changer (modifier donc) la formule de calcul du salaire brut car l'entreprise vient de
-revoir sa politique salariale, combien de modifications devez-vous faire pour que votre programme continue de fonctionner correctement ? Par exemple, si la nouvelle formule de calcul du salaire brut est  `base * nbHeures * 1.05`, combien de modifications devriez-vous faire dans votre programme ? Est-ce que vous pouvez faire mieux ?
-Remarque : dans ce qui suit, le salaire brut d'un employé restera toujours le même, à savoir `base * nbHeures`
+4. Si votre client vous demande de changer (modifier donc) la formule de calcul du salaire brut et la fixer à `base * nbHeures * 1.05`, pour que votre programme continue de fonctionner correctement ? Est-ce que vous pouvez faire mieux ?
+__Remarque__ : dans ce qui suit, le salaire brut d'un employé restera toujours le même, à savoir `base * nbHeures`
    
 5. Vérifiez votre solution dans le programme principal (la classe `GestionEmployes`). Vous y instancierez plusieurs
 employés (avec le builder) et afficherez les informations les concernant.
