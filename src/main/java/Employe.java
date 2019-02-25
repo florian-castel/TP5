@@ -7,6 +7,8 @@ public class Employe {
     protected double nbHeure;
     protected double salaireBrut;
     protected double salaire;
+    protected double coeff = 0.8;
+
 
 
     public Employe(int numSecu, String nom, String prenom, int echelon, double base, double nbHeure) {
@@ -16,12 +18,12 @@ public class Employe {
         this.echelon = echelon;
         this.base = base;
         this.nbHeure = nbHeure;
-        calculerSalaire(0.8);
+        this.calculerSalaire();
     }
 
-    private void calculerSalaire(double coeff){
+    private void calculerSalaire(){
         this. salaireBrut = this.base * this.nbHeure;
-        this. salaire = coeff * this.base * this.nbHeure;
+        this. salaire = coeff * this.salaireBrut;
     }
 
     @Override
@@ -38,4 +40,11 @@ public class Employe {
 
     }
 
+    public void setCoeff(double coeff) {
+        this.coeff = coeff;
+    }
+
+    public double getCoeff() {
+        return coeff;
+    }
 }
