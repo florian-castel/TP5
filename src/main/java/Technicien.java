@@ -6,7 +6,7 @@ public class Technicien extends Employe{
 
     public void effectuerTacheTechnique(){ System.out.println("J'effectue une tâche technique"); }
 
-    private void calculerSalaire(){
+    public void calculerSalaire(){
         this. salaireBrut = this.base * this.nbHeure + this.echelon * 100;
         this. salaire = coeff * this.salaireBrut;
     }

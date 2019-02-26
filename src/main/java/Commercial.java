@@ -1,4 +1,4 @@
-public class Commercial extends Employe {
+public abstract class Commercial extends Employe {
     private double chiffreAffaires;
     private double tauxCommission;
 
@@ -9,11 +9,9 @@ public class Commercial extends Employe {
         this.calculerSalaire();
     }
 
-    public void negocierTranscation(){
-        System.out.println("Je négocie une transaction");
-    }
+    public abstract void negocierTranscation();
 
-    private void calculerSalaire(){
+    public void calculerSalaire(){
         this. salaireBrut = this.base + this.chiffreAffaires * this.tauxCommission;
         this. salaire = coeff * this.salaireBrut;
     }

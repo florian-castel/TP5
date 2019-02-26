@@ -1,4 +1,4 @@
-public class Employe {
+public abstract class Employe {
     protected int numSecu;
     protected String nom;
     protected String prenom;
@@ -21,10 +21,7 @@ public class Employe {
         this.calculerSalaire();
     }
 
-    private void calculerSalaire(){
-        this. salaireBrut = this.base * this.nbHeure;
-        this. salaire = coeff * this.salaireBrut;
-    }
+    public abstract void calculerSalaire();
 
     @Override
     public String toString() {

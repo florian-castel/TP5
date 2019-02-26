@@ -13,7 +13,7 @@ public class Fabricant extends Employe {
         System.out.println("Je fabrique un produit");
     }
 
-    private void calculerSalaire(){
+    public void calculerSalaire(){
         this. salaireBrut = this.base * this.nbHeure + this.nbUnitesProduites * this.tauxCommissionUnite;
         this. salaire = coeff * this.salaireBrut;
     }
